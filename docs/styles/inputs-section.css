@@ -1,0 +1,105 @@
+form > .inputs-section {
+    padding: 0 0.8rem;
+    display: flex;
+    flex-direction: column;
+    gap: 3.2rem;
+}
+
+form > .inputs-section > .control-input {
+    display: flex;
+    flex-direction: column;
+    gap: 0.6rem;
+}
+
+form > .inputs-section > .control-input.input-select > .options {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    grid-template-rows: auto;
+    column-gap: 1.656rem;
+    row-gap: 1.6rem;
+}
+
+form > .inputs-section > .control-input.input-select > .options > input[type='radio'] {
+    display: none;
+}
+
+form > .inputs-section > .control-input.input-select > .options > input[type='text'] {
+    width: 100%;
+    padding-right: 1.733rem;
+    text-align: right;
+    background-color: var(--bg-input);
+    border: none;
+    border-radius: 0.5rem;
+}
+
+form > .inputs-section > .control-input.input-select > .options > label {
+    padding: 0.6rem 0;
+    text-align: center;
+    background-color: var(--very-dark-cyan);
+    border-radius: 0.5rem;
+    cursor: pointer;
+    transition: all 0.3s ease-out;
+}
+
+form > .inputs-section > .control-input.input-select > .options > label:hover {
+    background-color: var(--bg-hover);
+    color: var(--very-dark-cyan);
+}
+
+form>.inputs-section>.control-input.input-select>.options>input[type='radio']:checked+label {
+    background-color: var(--strong-cyan);
+}
+
+form > .inputs-section > .control-input > .header {
+    position: relative;
+    overflow: hidden;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+}
+
+form > .inputs-section > .control-input > .header > span {
+    position: absolute;
+    right: 0;
+    transform: translateX(110%);
+}
+
+form > .inputs-section > .control-input > .input-text {
+    position: relative;
+}
+
+form > .inputs-section > .control-input > .input-text > img {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    left: 1.926rem;
+}
+
+form > .inputs-section > .control-input > .input-text > input {
+    padding: 0.6rem 1.748rem 0.6rem 0;
+    width: 100%;
+    text-align: right;
+    border-radius: 0.5rem;
+    border: none;
+    background-color: var(--bg-input);
+}
+
+/* tablet-breakpoint */
+@media (min-width: 31.25rem) {
+    form>.inputs-section>.control-input.input-select>.options {
+        grid-template-columns: repeat(2, 18rem);
+    }
+}
+
+/* desktop-breakpoint */
+@media (min-width: 62.5rem) {
+    form > .inputs-section {
+        padding: 1.3rem 1.6rem 1.6rem 1.6rem;
+        gap: 4rem;
+    }
+
+    form>.inputs-section>.control-input.input-select>.options {
+        grid-template-columns: repeat(3, 11.7rem);
+        column-gap: 1.4rem;
+    }
+}

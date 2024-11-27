@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"> <!-- displays site properly based on user's device -->
+
+  <link rel="icon" type="image/png" sizes="32x32" href="./images/favicon-32x32.png">
+  
+  <title>Frontend Mentor | Tip calculator app</title>
+
+  <link rel="stylesheet" href="./index.css">
+  <script defer src="./index.js"></script>
+</head>
+<body class="screen">
+  <main>
+    <div class="img-wrapper">
+      <img src="./images/logo.svg" alt="Splitter Logo">
+    </div>
+    
+    <form>
+      <section class="inputs-section">
+        <div class="control-input">
+          <div class="header text-label">
+            <label for="bill-input" class="color-dark-grayish-cyan">Bill</label>
+            <span class="color-error">Can't be zero</span>
+          </div>
+          <div class="input-text">
+            <img src="./images/icon-dollar.svg" alt="">
+            <input
+              class="text-input color-very-dark-cyan"
+              id="bill-input"
+              placeholder="0"
+              type="text"
+            >
+          </div>
+        </div>
+      
+        <div class="control-input input-select">
+          <div class="header text-label">
+            <label for="custom-tip" class="color-dark-grayish-cyan">Select Tip %</label>
+            <span class="color-error">Select one option</span>
+          </div>
+          
+          <div class="options text-input color-white" id="options">
+            <input type="radio" value="5" id="tip-5" name="tip">
+            <label for="tip-5">5%</label>
+            <input type="radio" value="10" id="tip-10" name="tip">
+            <label for="tip-10">10%</label>
+            <input type="radio" value="15" id="tip-15" name="tip">
+            <label for="tip-15">15%</label>
+            <input type="radio" value="25" id="tip-25" name="tip">
+            <label for="tip-25">25%</label>
+            <input type="radio" value="50" id="tip-50" name="tip">
+            <label for="tip-50">50%</label>
+            <input
+              class="text-input color-very-dark-cyan"
+              id="custom-tip"
+              name="custom-tip"
+              placeholder="Custom"
+              type="text"
+            >
+          </div>
+        </div>
+      
+        <div class="control-input">
+          <div class="header text-label">
+            <label for="number-people-input" class="color-dark-grayish-cyan">Number of People</label>
+            <span class="color-error">Can't be zero</span>
+          </div>
+          <div class="input-text">
+            <img src="./images/icon-person.svg" alt="">
+            <input
+              class="text-input color-very-dark-cyan"
+              id="number-people-input"
+              placeholder="0"
+              type="text"
+            >
+          </div>
+        </div>
+      </section>
+    
+      <section class="results-section">
+        <div class="results">
+          <div class="tip-result">
+            <div class="title">
+              <h2 class="text-label color-white">Tip Amount</h2>
+              <p class="text-caption color-grayish-cyan">/ person</p>
+            </div>
+  
+            <p class="amount text-result color-strong-cyan">$0.00</p>
+          </div>
+        
+          <div class="tip-result">
+            <div class="title">
+              <h2 class="text-label color-white">Total</h2>
+              <p class="text-caption color-grayish-cyan">/ person</p>
+            </div>
+  
+            <p class="amount text-result color-strong-cyan">$0.00</p>
+          </div>
+        </div>
+      
+        <button type="reset" class="text-button color-very-dark-cyan">Reset</button>
+      </section>
+    </form>
+  </main>
+</body>
+</html>
