@@ -1,34 +1,40 @@
-main {
-    padding-top: 5rem;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    gap: 4.086rem;
-}
-
-main > form {
-    padding: 3.2rem 2.4rem;
+.form {
     background-color: var(--white);
     border-radius: 2.5rem 2.5rem 0rem 0rem;
+    padding: 3.2rem 2.4rem;
     display: flex;
     flex-direction: column;
     gap: 3.2rem;
-    transition: border-radius 0.5s ease-in;
 }
 
 /* tablet-breakpoint */
-@media (min-width: 31.25rem) {
-    main > form {
+@media (min-width: 37.5rem) {
+    .header {
+        grid-column: 1 / 9;
+    }
+
+    .main {
+        grid-column: 1 / 9;
+    }
+
+    .form {
         border-radius: 2.5rem;
     }
 }
 
-
 /* desktop-breakpoint */
 @media (min-width: 62.5rem) {
-    main > form {
+    .header {
+        grid-column: 6 / 8;
+    }
+
+    .main {
+        grid-column: 2 / 12;
+    }
+
+    .form {
         padding: 3.2rem;
         flex-direction: row;
-        gap: 3.2rem;
+        gap: 4.8rem;
     }
 }

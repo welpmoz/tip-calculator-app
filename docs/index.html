@@ -9,98 +9,102 @@
   <title>Frontend Mentor | Tip calculator app</title>
 
   <link rel="stylesheet" href="./index.css">
+
   <script defer src="./index.js"></script>
 </head>
 <body class="screen">
-  <main>
-    <div class="img-wrapper">
-      <img src="./images/logo.svg" alt="Splitter Logo">
-    </div>
-    
-    <form>
-      <section class="inputs-section">
-        <div class="control-input">
-          <div class="header text-label">
-            <label for="bill-input" class="color-dark-grayish-cyan">Bill</label>
-            <span class="color-error">Can't be zero</span>
+  <header class="header">
+    <img src="./images/logo.svg" alt="Splitter Logo" class="header__logo">
+  </header>
+
+  <main class="main">
+    <form class="form" id="tip-form">
+      <section class="form__section form__section--inputs">
+        <div class="form__control form__control--text">
+          <div class="form__control-header">
+            <label for="bill-input" class="form__label">Bill</label>
+            <span class="form__control-error" id="bill-error">Must be a positive number</span>
           </div>
-          <div class="input-text">
-            <img src="./images/icon-dollar.svg" alt="">
+          <div class="form__input-wrapper">
+            <img src="./images/icon-dollar.svg" alt="Dollar icon" class="form__icon">
             <input
-              class="text-input color-very-dark-cyan"
+              class="form__input"
               id="bill-input"
-              placeholder="0"
+              name="bill"
+              placeholder="Enter a number"
               type="text"
             >
           </div>
         </div>
-      
-        <div class="control-input input-select">
-          <div class="header text-label">
-            <label for="custom-tip" class="color-dark-grayish-cyan">Select Tip %</label>
-            <span class="color-error">Select one option</span>
+
+        <div class="form__control form__control--select">
+          <div class="form__control-header">
+            <label for="custom-tip-input" class="form__label">Select Tip %</label>
+            <span class="form__control-error" id="custom-tip-error">Must be a number</span>
           </div>
-          
-          <div class="options text-input color-white" id="options">
-            <input type="radio" value="5" id="tip-5" name="tip">
-            <label for="tip-5">5%</label>
-            <input type="radio" value="10" id="tip-10" name="tip">
-            <label for="tip-10">10%</label>
-            <input type="radio" value="15" id="tip-15" name="tip">
-            <label for="tip-15">15%</label>
-            <input type="radio" value="25" id="tip-25" name="tip">
-            <label for="tip-25">25%</label>
-            <input type="radio" value="50" id="tip-50" name="tip">
-            <label for="tip-50">50%</label>
+          <div class="form__options" id="options">
+            <input class="form__radio" type="radio" name="tip" id="tip-5" value="0.05">
+            <label class="form__radio-label" for="tip-5">5%</label>
+            
+            <input class="form__radio" type="radio" name="tip" id="tip-10" value="0.1">
+            <label class="form__radio-label" for="tip-10">10%</label>
+            
+            <input class="form__radio" type="radio" name="tip" id="tip-15" value="0.15">
+            <label class="form__radio-label" for="tip-15">15%</label>
+            
+            <input class="form__radio" type="radio" name="tip" id="tip-25" value="0.25">
+            <label class="form__radio-label" for="tip-25">25%</label>
+            
+            <input class="form__radio" type="radio" name="tip" id="tip-50" value="0.5">
+            <label class="form__radio-label" for="tip-50">50%</label>
+            
             <input
-              class="text-input color-very-dark-cyan"
-              id="custom-tip"
+              class="form__input form__input--custom-tip"
+              id="custom-tip-input"
               name="custom-tip"
               placeholder="Custom"
               type="text"
             >
           </div>
         </div>
-      
-        <div class="control-input">
-          <div class="header text-label">
-            <label for="number-people-input" class="color-dark-grayish-cyan">Number of People</label>
-            <span class="color-error">Can't be zero</span>
+
+        <div class="form__control form__control--text">
+          <div class="form__control-header">
+            <label for="people-input" class="form__label">Number of People</label>
+            <span class="form__control-error" id="people-error">Must be greater than zero</span>
           </div>
-          <div class="input-text">
-            <img src="./images/icon-person.svg" alt="">
+          <div class="form__input-wrapper">
+            <img src="./images/icon-person.svg" alt="Person icon" class="form__icon">
             <input
-              class="text-input color-very-dark-cyan"
-              id="number-people-input"
-              placeholder="0"
+              class="form__input"
+              id="people-input"
+              name="people"
+              placeholder="Enter a number"
               type="text"
             >
           </div>
         </div>
       </section>
-    
-      <section class="results-section">
+
+      <section class="form__section form__section--results">
         <div class="results">
-          <div class="tip-result">
-            <div class="title">
-              <h2 class="text-label color-white">Tip Amount</h2>
-              <p class="text-caption color-grayish-cyan">/ person</p>
+          <div class="results__item">
+            <div class="results__details">
+              <span class="results__label">Tip amount</span>
+              <span class="results__sub-label">/ person</span>
             </div>
-  
-            <p class="amount text-result color-strong-cyan">$0.00</p>
+            <span class="results__value" id="tip-amount-result">$0.00</span>
           </div>
-        
-          <div class="tip-result">
-            <div class="title">
-              <h2 class="text-label color-white">Total</h2>
-              <p class="text-caption color-grayish-cyan">/ person</p>
+          <div class="results__item">
+            <div class="results__details">
+              <span class="results__label">Tip amount</span>
+              <span class="results__sub-label">/ person</span>
             </div>
-  
-            <p class="amount text-result color-strong-cyan">$0.00</p>
+            <span class="results__value" id="total-amount-result">$0.00</span>
           </div>
         </div>
-      
-        <button type="reset" class="text-button color-very-dark-cyan">Reset</button>
+
+        <button class="form__reset-button" type="reset" id="reset-button" disabled>RESET</button>
       </section>
     </form>
   </main>

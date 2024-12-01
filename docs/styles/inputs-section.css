@@ -1,17 +1,86 @@
-form > .inputs-section {
-    padding: 0 0.8rem;
+.form__section--inputs {
+    padding: 0rem 0.8rem;
     display: flex;
     flex-direction: column;
     gap: 3.2rem;
 }
 
-form > .inputs-section > .control-input {
+.form__control {
     display: flex;
     flex-direction: column;
+}
+
+.form__control-header {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    align-items: center;
+    overflow: hidden;
+}
+
+.form__control-error {
+    display: none;
+    color: var(--color-error);
+    font-size: 1.6rem;
+    font-weight: 700;
+    letter-spacing: 0rem;
+}
+
+.form__control-error--visible {
+    display: inline;
+}
+
+.form__control--text {
     gap: 0.6rem;
 }
 
-form > .inputs-section > .control-input.input-select > .options {
+.form__control--select {
+    gap: 1.6rem;
+}
+
+.form__label {
+    font-size: 1.6rem;
+    font-weight: 700;
+    letter-spacing: 0rem;
+    color: var(--dark-grayish-cyan);
+}
+
+.form__input-wrapper {
+    position: relative;
+}
+
+.form__icon {
+    position: absolute;
+    top: 50%;
+    transform: translate(1.672rem, -50%);
+}
+
+.form__input {
+    font-family: 'Space Mono', monospace;
+    padding: 0.6rem 1.672rem;
+    width: 100%;
+    text-align: right;
+    font-size: 2.4rem;
+    font-weight: 700;
+    letter-spacing: 0rem;
+    color: var(--very-dark-cyan);
+    border: 0.2rem solid var(--bg-input);
+    border-radius: 0.5rem;
+    background-color: var(--bg-input);
+    transition: border-color 0.3s ease-out;
+}
+
+.form__input--error {
+    border-color: var(--color-error);
+}
+
+.form__input:hover {
+    cursor: pointer;
+    border-color: var(--strong-cyan);
+}
+
+.form__options {
     display: grid;
     grid-template-columns: repeat(2, 1fr);
     grid-template-rows: auto;
@@ -19,87 +88,42 @@ form > .inputs-section > .control-input.input-select > .options {
     row-gap: 1.6rem;
 }
 
-form > .inputs-section > .control-input.input-select > .options > input[type='radio'] {
+.form__radio {
     display: none;
 }
 
-form > .inputs-section > .control-input.input-select > .options > input[type='text'] {
-    width: 100%;
-    padding-right: 1.733rem;
-    text-align: right;
-    background-color: var(--bg-input);
-    border: none;
-    border-radius: 0.5rem;
-}
-
-form > .inputs-section > .control-input.input-select > .options > label {
-    padding: 0.6rem 0;
+.form__radio-label {
+    padding: 0.6rem;
     text-align: center;
+    font-size: 2.4rem;
+    font-weight: 700;
+    letter-spacing: 0rem;
+    color: var(--white);
     background-color: var(--very-dark-cyan);
     border-radius: 0.5rem;
-    cursor: pointer;
     transition: all 0.3s ease-out;
 }
 
-form > .inputs-section > .control-input.input-select > .options > label:hover {
+.form__radio-label:hover {
     background-color: var(--bg-hover);
     color: var(--very-dark-cyan);
+    cursor: pointer;
 }
 
-form>.inputs-section>.control-input.input-select>.options>input[type='radio']:checked+label {
+.form__radio:checked + .form__radio-label {
     background-color: var(--strong-cyan);
-}
-
-form > .inputs-section > .control-input > .header {
-    position: relative;
-    overflow: hidden;
-    display: flex;
-    flex-direction: row;
-    justify-content: space-between;
-}
-
-form > .inputs-section > .control-input > .header > span {
-    position: absolute;
-    right: 0;
-    transform: translateX(110%);
-}
-
-form > .inputs-section > .control-input > .input-text {
-    position: relative;
-}
-
-form > .inputs-section > .control-input > .input-text > img {
-    position: absolute;
-    top: 50%;
-    transform: translateY(-50%);
-    left: 1.926rem;
-}
-
-form > .inputs-section > .control-input > .input-text > input {
-    padding: 0.6rem 1.748rem 0.6rem 0;
-    width: 100%;
-    text-align: right;
-    border-radius: 0.5rem;
-    border: none;
-    background-color: var(--bg-input);
-}
-
-/* tablet-breakpoint */
-@media (min-width: 31.25rem) {
-    form>.inputs-section>.control-input.input-select>.options {
-        grid-template-columns: repeat(2, 18rem);
-    }
+    color: var(--very-dark-cyan);
 }
 
 /* desktop-breakpoint */
 @media (min-width: 62.5rem) {
-    form > .inputs-section {
-        padding: 1.3rem 1.6rem 1.6rem 1.6rem;
+    .form__section--inputs {
+        padding: 1.3rem 0rem 1.6rem 1.6rem;
         gap: 4rem;
     }
 
-    form>.inputs-section>.control-input.input-select>.options {
-        grid-template-columns: repeat(3, 11.7rem);
+    .form__options {
+        grid-template-columns: repeat(3, 12.5rem);
         column-gap: 1.4rem;
     }
 }

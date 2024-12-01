@@ -17,7 +17,7 @@
     font-size: 62.5%;
 
     --desktop-breakpoint: 62.5rem;
-    --tablet-breakpoint: 31.25rem;
+    --tablet-breakpoint: 37.5rem;
 }
 
 .color-light-grayish-cyan {
@@ -56,15 +56,30 @@
 
 .screen {
     min-height: 100vh;
+    padding-top: 5rem;
     background-color: var(--light-grayish-cyan);
-    display: flex;
-    align-items: center;
-    justify-content: center;
+    display: grid;
+    grid-template-columns: 1fr;
+    grid-template-rows: auto;
+    justify-items: center;
+    align-content: center;
+    gap: 4.086rem;
 }
 
-/* tablet-breakpoin */
-@media (min-width: 31.25rem) {
+/* tablet-breakpoint */
+@media (min-width: 37.5rem) {
     .screen {
-        padding: 0rem 2.5rem 5rem 2.5rem;
+        padding: 5rem 0;
+        justify-content: center;
+        grid-template-columns: repeat(8, 5.6rem);
+        gap: 2rem;
+    }
+}
+
+/* desktop-breakpoint */
+@media (min-width: 62.5rem) {
+    .screen {
+        grid-template-columns: repeat(12, 7rem);
+        gap: 3.05rem;
     }
 }
